@@ -4,6 +4,7 @@ node{
 	}
 	stage('Test'){
 		bat 'mvn test';
+		junit 'target/surefire-reports/**/*.xml'
 	} 
 	stage('Build'){
 		bat 'mvn clean package -DskipTests=true';
